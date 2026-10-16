@@ -1,0 +1,46 @@
+using System;
+
+namespace Polymorphism
+{
+    public class MainClass
+    {
+        public static void Main(string[] args)
+    {
+        Hero h = new Hero();
+        h = new Knight();
+        h = new Wizard();
+
+        Knight k = new Knight();
+        k.baseDamage = 100;
+        k.name = "iwan";
+        k.bonusArmor = 50;
+
+        h = k;
+        h.useSkill();
+        k.useSkill();
+
+        Hero[] arrHero = new Hero[3];
+        Knight kn = new Knight();
+        kn.name = "mibombo";
+        kn.baseDamage = 120;
+        kn.bonusArmor = 50;
+
+        arrHero[0] = h;
+        arrHero[1] = k;
+        arrHero[2] = new Wizard();
+
+        arrHero[0].useSkill();
+        arrHero[1].useSkill();
+        arrHero[2].useSkill();
+    }
+}
+
+//Hero h = new Hero();
+        //h.useSkill();
+
+        //Hero w = new Wizard();
+        //w.useSkill();
+
+        //Hero k = new Knight();
+        //k.useSkill();
+    }
